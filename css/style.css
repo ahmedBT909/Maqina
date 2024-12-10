@@ -48,25 +48,23 @@
 }
 
 .hand-rob {
-    position: relative; /* لجعل الصورة قابلة للتحريك */
-    top: -150px; /* تحريك الصورة لأعلى (يمكن تعديل القيمة حسب الحاجة) */
+    position: relative;
+    top: -70px;
 }
 
-/* لتنسيق الصورة الثابتة الجديدة */
 .static-image-container {
     position: relative;
-    max-width: 100%; /* خلي العرض النسبي */
-    height: 300px; /* حدد ارتفاع مشابه للي كان معمول عشان صورة hand rob */
+    max-width: 150%;
     display: flex;
     justify-content: center;
 }
 
-
 .static-image-container img {
-    max-width: 1000px; /* تأكد من أن الصورة تتكيف مع المساحة */
-    height: auto; /* الحفاظ على النسبة بين العرض والارتفاع */
-    object-fit: contain; /* تأكد أن الصورة تظهر بشكل كامل داخل الحاوية */
+    max-width: 1000px;
+    height: auto;
+    object-fit: contain;
 }
+
 
 /*** Spinner ***/
 #spinner {
@@ -329,18 +327,15 @@ h6{
     margin-bottom: 6rem;
     padding: 16rem 0 0 0;
     background:
-        url(../img/bg-circle.png),
-        url(../img/bg-triangle.png),
+       
         url(../img/bg-bottom.png), /* أضف الصورة الجديدة هنا */
-        url(../img/Ttop.jpg); /* الصورة الخلفية الرئيسية */
+        url(../img/Top.jpg); /* الصورة الخلفية الرئيسية */
     background-position:
-        left 0px top 0px, /* مكان bg-circle */
-        right 0px top 50%, /* مكان bg-triangle */
+    
         center bottom, /* مكان bg-bottom */
         center center; /* مكان Ttop */
     background-size:
-        auto,
-        auto,
+       
         100% 150px, /* خلي bg-bottom تاخد العرض الكامل وقلل ارتفاعها */
         cover; /* غطي كامل القسم بالصورة Ttop */
     background-repeat: no-repeat;
