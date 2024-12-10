@@ -1,12 +1,52 @@
 /********** Maqina Brand Styles **********/
 :root {
-    --primary: #1FC480;  /* Emerald Green (Primary Color) */
-    --secondary: #354640;  /* Red (Secondary Color) */
+    --primary: #23C683;  /* Emerald Green (Primary Color) */
+    --secondary2: #226E6A;  /* Red (Secondary Color) */
+    --secondary: #23C683; /* Red (Secondary Color) */
     --light: #FFFFFF;  /* White (Primary Color) */
     --dark: #151B19;  /* Eerie Black (Primary Color) */
     --gold: #D2C54F;  /* Gold-like Yellow (Secondary Color) */
     --brown: #7A4419;  /* Brownish Orange (Secondary Color) */
 }
+
+.btn.btn-primary-gradient2,
+.btn.btn-secondary-gradient {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    color: #FFFFFF;
+    z-index: 1;
+    font-weight: bold;
+}
+
+.btn.btn-primary-gradient2::after,
+.btn.btn-secondary-gradient::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+    z-index: -1;
+    opacity: 0;
+}
+
+.btn.btn-primary-gradient2,
+.btn.btn-secondary-gradient::after {
+    background: linear-gradient(to bottom right, var(--secondary2), var(--secondary2));
+}
+
+.btn.btn-secondary-gradient,
+.btn.btn-primary-gradient2::after {
+    background: linear-gradient(to bottom right, var(--secondary2), var(--secondary2));
+}
+
+.btn.btn-primary-gradient2:hover::after,
+.btn.btn-secondary-gradient:hover::after {
+    opacity: 1;
+}
+
 .hand-rob {
     position: relative; /* لجعل الصورة قابلة للتحريك */
     top: -150px; /* تحريك الصورة لأعلى (يمكن تعديل القيمة حسب الحاجة) */
@@ -43,21 +83,31 @@
 
 /*** Heading ***/
 h1,
-h2,
-.fw-bold {
-    font-weight: 700 !important;
+h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }
 
 h3,
-h4,
-.fw-semi-bold {
-    font-weight: 600 !important;
+h4 {
+    font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
 h5,
-h6,
-.fw-medium {
-    font-weight: 500 !important;
+h6{
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+.p2,.mb-0{
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-style: normal;
 }
 
 /*** Gradient Text & BG ***/
@@ -68,17 +118,17 @@ h6,
 }
 
 .text-secondary-gradient {
-    background: linear-gradient(to bottom right, var(--secondary), var(--primary));
+    background: linear-gradient(to bottom right, var(--secondary), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .bg-primary-gradient {
-    background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+    background: linear-gradient(to bottom right, var(--secondary), var(--secondary));
 }
 
 .bg-secondary-gradient {
-    background: linear-gradient(to bottom right, var(--secondary), var(--primary));
+    background: linear-gradient(to bottom right, var(--secondary2), var(--secondary2));
 }
 
 /*** Button ***/
@@ -93,6 +143,7 @@ h6,
     border: none;
     color: #FFFFFF;
     z-index: 1;
+    font-weight:bold;
 }
 
 .btn.btn-primary-gradient::after,
@@ -110,12 +161,12 @@ h6,
 
 .btn.btn-primary-gradient,
 .btn.btn-secondary-gradient::after {
-    background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+    background: linear-gradient(to bottom right, var(--primary), var(--primary));
 }
 
 .btn.btn-secondary-gradient,
 .btn.btn-primary-gradient::after {
-    background: linear-gradient(to bottom right, var(--secondary), var(--primary));
+    background: linear-gradient(to bottom right, var(--primary), var(--primary));
 }
 
 .btn.btn-primary-gradient:hover::after,
@@ -164,7 +215,6 @@ h6,
     position: relative;
     margin-right: 25px;
     padding: 45px 0;
-    font-family: 'Jost', sans-serif;
     font-size: 18px;
     font-weight: 500;
     color: var(--light) !important;
@@ -271,36 +321,6 @@ h6,
     }
 }
 
-/* Poppins Font */
-@font-face {
-font-family: 'Poppins';
-src: url('C:/Users/ahmed/Desktop/mobile-app-html-template/img/Poppins/Poppins-Black.ttf') format('truetype'),
-url('C:/Users/ahmed/Desktop/mobile-app-html-template/img/Poppins/Poppins-BlackItalic.ttf') format('truetype'),
-url('C:/Users/ahmed/Desktop/mobile-app-html-template/img/Poppins/Poppins-Bold.ttf') format('truetype'),
-url('C:/Users/ahmed/Desktop/mobile-app-html-template/img/Poppins/Poppins-BoldItalic.ttf') format('truetype'),
-url('C:/Users/ahmed/Desktop/mobile-app-html-template/img/Poppins/Poppins-ExtraBold.ttf') format('truetype'),
-url('C:/Users/ahmed/Desktop/mobile-app-html-template/img/Poppins/Poppins-ExtraBoldItalic.ttf') format('truetype'),
-url('C:/Users/ahmed/Desktop/mobile-app-html-template/img/Poppins/Poppins-ExtraLight.ttf') format('truetype'),
-url('C:/Users/ahmed/Desktop/mobile-app-html-template/img/Poppins/Poppins-ExtraLightItalic.ttf') format('truetype'),
-url('C:/Users/ahmed/Desktop/mobile-app-html-template/img/Poppins/Poppins-Italic.ttf') format('truetype'),
-url('C:/Users/ahmed/Desktop/mobile-app-html-template/img/Poppins/Poppins-Light.ttf') format('truetype'),
-url('C:/Users/ahmed/Desktop/mobile-app-html-template/img/Poppins/Poppins-LightItalic.ttf') format('truetype'),
-url('C:/Users/ahmed/Desktop/mobile-app-html-template/img/Poppins/Poppins-Medium.ttf') format('truetype'),
-url('C:/Users/ahmed/Desktop/mobile-app-html-template/img/Poppins/Poppins-MediumItalic.ttf') format('truetype'),
-url('C:/Users/ahmed/Desktop/mobile-app-html-template/img/Poppins/Poppins-Regular.ttf') format('truetype'),
-url('C:/Users/ahmed/Desktop/mobile-app-html-template/img/Poppins/Poppins-SemiBold.ttf') format('truetype'),
-url('C:/Users/ahmed/Desktop/mobile-app-html-template/img/Poppins/Poppins-SemiBoldItalic.ttf') format('truetype'),
-url('C:/Users/ahmed/Desktop/mobile-app-html-template/img/Poppins/Poppins-Thin.ttf') format('truetype'),
-url('C:/Users/ahmed/Desktop/mobile-app-html-template/img/Poppins/Poppins-ThinItalic.ttf') format('truetype');
-}
-/* Conthrax Font */
-@font-face {
-font-family: 'Conthrax';
-src: url('C:/Users/ahmed/Desktop/mobile-app-html-template/img/conthrax/conthrax-sb.otf') format('opentype');
-}
-body {
-font-family: 'Conthrax', sans-serif;
-}
 
 /*** Hero Header ***/
 .hero-header {
@@ -362,7 +382,7 @@ font-family: 'Conthrax', sans-serif;
 .carousel-indicators button {
     width: 15px; /* زيادة حجم النقاط */
     height: 15px;
-    background-color: #000000; /* لون النقاط غير النشطة */
+    background-color: #23C683; /* لون النقاط غير النشطة */
     border-radius: 30%;
     border: none;
     margin: 0 8px; /* المسافة بين النقاط */
@@ -491,7 +511,7 @@ font-family: 'Conthrax', sans-serif;
 }
 
 .testimonial-carousel .owl-item.center .testimonial-item {
-    background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+    background-image: url('../img/topSmall.jpg');
 }
 
 .testimonial-carousel .owl-item.center .testimonial-item h5,
