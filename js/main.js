@@ -98,54 +98,19 @@
             }
         }
     });
-// تغيير اللوجو عند السحب مع دعم جميع الأحجام والزووم
+    // تغيير اللوجو عند السحب
 window.addEventListener('scroll', function () {
     const navbarLogo = document.getElementById('navbarLogo');
-    const isSmallScreen = window.innerWidth <= 768 || document.documentElement.clientWidth <= 768; // التحقق من العرض الفعلي مع الزووم
-    
-    if (window.scrollY > 50) {
-        // إذا كان السحب لأسفل
-        if (isSmallScreen) {
-            navbarLogo.src = 'img/Maqina\'s signature2.png'; // لوجو يناسب الخلفية البيضاء
-        } else {
-            navbarLogo.src = 'img/Maqina\'s signature2.png'; // اللوجو الثاني
-        }
-        navbarLogo.style.height = '40px'; // تصغير الحجم
+    if (window.scrollY > 50) { 
+        // تغيير اللوجو عند السحب لأسفل
+        navbarLogo.src = 'img/Maqina\'s signature2.png'; // مسار اللوجو الثاني
+        navbarLogo.style.height = '40px'; // اختياري: تعديل الحجم
     } else {
-        // إذا لم يكن هناك سحب
-        if (isSmallScreen) {
-            navbarLogo.src = 'img/Maqina\'s signature2.png'; // نفس اللوجو الغامق
-        } else {
-            navbarLogo.src = 'img/Maqina\'s signature.png'; // اللوجو الأصلي
-        }
-        navbarLogo.style.height = '50px'; // إعادة الحجم
+        // إعادة اللوجو الأصلي عند العودة للأعلى
+        navbarLogo.src = 'img/Maqina\'s signature.png'; // مسار اللوجو الأصلي
+        navbarLogo.style.height = '50px'; // اختياري: تعديل الحجم
     }
 });
-
-// التحقق عند تحميل الصفحة (في حالة بدأ المستخدم بزوم معين)
-document.addEventListener('DOMContentLoaded', function () {
-    const navbarLogo = document.getElementById('navbarLogo');
-    const isSmallScreen = window.innerWidth <= 768 || document.documentElement.clientWidth <= 768; // التحقق من العرض الفعلي مع الزووم
-
-    if (window.scrollY > 50) {
-        // إذا بدأ السحب فور التحميل
-        if (isSmallScreen) {
-            navbarLogo.src = 'img/Maqina\'s signature2.png'; // لوجو غامق
-        } else {
-            navbarLogo.src = 'img/Maqina\'s signature2.png'; // اللوجو الثاني
-        }
-        navbarLogo.style.height = '40px';
-    } else {
-        // إذا لم يبدأ بالسحب
-        if (isSmallScreen) {
-            navbarLogo.src = 'img/Maqina\'s signature2.png'; // لوجو غامق
-        } else {
-            navbarLogo.src = 'img/Maqina\'s signature.png'; // اللوجو الأصلي
-        }
-        navbarLogo.style.height = '50px';
-    }
-});
-
     
 })(jQuery);
 
