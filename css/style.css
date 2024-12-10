@@ -54,11 +54,13 @@
 
 /* لتنسيق الصورة الثابتة الجديدة */
 .static-image-container {
-    position: relative; /* للحفاظ على التصميم الحالي */
-    max-width: 150%; /* التحكم في حجم الصورة */
+    position: relative;
+    max-width: 100%; /* خلي العرض النسبي */
+    height: 300px; /* حدد ارتفاع مشابه للي كان معمول عشان صورة hand rob */
     display: flex;
-    justify-content: center; /* محاذاة الصورة في المنتصف */
+    justify-content: center;
 }
+
 
 .static-image-container img {
     max-width: 1000px; /* تأكد من أن الصورة تتكيف مع المساحة */
@@ -329,20 +331,21 @@ h6{
     background:
         url(../img/bg-circle.png),
         url(../img/bg-triangle.png),
-        url(../img/bg-bottom.png),
-        url(../img/Top.jpg); /* الصورة الخلفية تكون الطبقة السفلى */
+        url(../img/bg-bottom.png), /* أضف الصورة الجديدة هنا */
+        url(../img/Ttop.jpg); /* الصورة الخلفية الرئيسية */
     background-position:
-        left 0px top 0px,
-        right 0px top 50%,
-        center bottom,
-        center center; /* الصورة الرئيسية */
+        left 0px top 0px, /* مكان bg-circle */
+        right 0px top 50%, /* مكان bg-triangle */
+        center bottom, /* مكان bg-bottom */
+        center center; /* مكان Ttop */
     background-size:
         auto,
         auto,
-        100%,
-        cover; /* الصورة الخلفية تغطي كامل القسم */
+        100% 150px, /* خلي bg-bottom تاخد العرض الكامل وقلل ارتفاعها */
+        cover; /* غطي كامل القسم بالصورة Ttop */
     background-repeat: no-repeat;
 }
+
 
 
 @media (max-width: 991.98px) {
@@ -548,24 +551,23 @@ h6{
 
 /*** Footer ***/
 .footer {
-    margin-top: 6rem;
-    padding-top: 9rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
     background:
         url(../img/bg-circle.png),
-        url(../img/bg-triangle.png),
-        url(../img/bg-top.png), /* الصورة الخلفية التي ستأخذ كامل العرض */
-        url(../img/Top.jpg); /* الصورة الخلفية تكون الطبقة السفلى */
+        url(../img/bg-triangle.png), /* الصورة الثانية هنا */
+        url(../img/Top.jpg); /* الصورة الخلفية الأساسية */
     background-position:
-        left 0px bottom 0px,
-        right 0px top 50%,
-        center top -20px; /* رفع الصورة لأعلى بمقدار 20px */
+        left 0px bottom 0px,    /* bg-circle على اليسار */
+        right 0px center,       /* bg-triangle على اليمين وفي المنتصف */
+        center bottom;          /* Top.jpg في أسفل المنتصف */
     background-size:
         auto,
         auto,
-        100% auto, /* جعل bg-top تغطي العرض بالكامل فقط */
         cover; /* الصورة الثانية تغطي القسم */
     background-repeat: no-repeat;
 }
+
 
 
 
