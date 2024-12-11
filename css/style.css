@@ -79,46 +79,6 @@
         width: 600px;
     }
 }
-/* عزل التنسيق فقط لعناصر البوكسات داخل القسم */
-#Services .position-relative {
-    height: 250px; /* ارتفاع ثابت للبوكس */
-    display: flex; /* استخدام Flexbox لتنسيق المحتويات */
-    flex-direction: column; /* ترتيب العناصر عموديًا */
-    align-items: center; /* توسيط المحتوى أفقيًا */
-    text-align: center; /* توسيط النصوص */
-    padding: 10px; /* إضافة مسافة داخلية بسيطة */
-    gap: 12px; /* تقليل المسافة بين العناصر */
-}
-
-/* تحسين تنسيق الصورة */
-#Services .position-relative img, 
-#Services .position-relative .d-inline-flex {
-    width: 80px; /* حجم مناسب للصورة */
-    height: 80px; /* حجم مناسب للصورة */
-    object-fit: contain; /* ضمان ظهور الصورة كاملة */
-}
-
-/* العناوين */
-#Services .position-relative h5 {
-    font-size: 18px; /* تكبير الخط */
-    font-weight: 600;
-    margin: 4px 0; /* تقليل المسافة بين العنوان والصورة */
-    margin-bottom: 12px; /* تعديل المسافة بين العنوان والوصف */
-}
-
-/* الوصف */
-#Services .position-relative p {
-    font-size: 16px; /* تكبير الخط */
-    line-height: 1.6; /* تحسين القراءة */
-    text-overflow: ellipsis; /* عرض "..." لو النص طويل */
-    display: -webkit-box; /* التعامل مع النص كصندوق */
-    -webkit-line-clamp: 4; /* عدد الأسطر المسموح بها */
-    -webkit-box-orient: vertical; /* تحديد اتجاه النص عموديًا */
-    overflow: hidden; /* إخفاء النصوص الزائدة */
-    max-height: calc(1.6em * 4); /* ارتفاع النص بحسب عدد الأسطر */
-}
-
-
 
 /*** Spinner ***/
 #spinner {
