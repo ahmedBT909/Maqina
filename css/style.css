@@ -54,7 +54,7 @@
 
 .static-image-container {
     position: relative;
-    max-width: 150%;
+    max-width: 130%;
     display: flex;
     justify-content: center;
 }
@@ -78,47 +78,8 @@
         margin-left:20px;
         width: 600px;
     }
+  
 }
-/* عزل التنسيق فقط لعناصر البوكسات داخل القسم */
-#Services .position-relative {
-    height: 250px; /* ارتفاع ثابت للبوكس */
-    display: flex; /* استخدام Flexbox لتنسيق المحتويات */
-    flex-direction: column; /* ترتيب العناصر عموديًا */
-    align-items: center; /* توسيط المحتوى أفقيًا */
-    text-align: center; /* توسيط النصوص */
-    padding: 10px; /* إضافة مسافة داخلية بسيطة */
-    gap: 12px; /* تقليل المسافة بين العناصر */
-}
-
-/* تحسين تنسيق الصورة */
-#Services .position-relative img, 
-#Services .position-relative .d-inline-flex {
-    width: 80px; /* حجم مناسب للصورة */
-    height: 80px; /* حجم مناسب للصورة */
-    object-fit: contain; /* ضمان ظهور الصورة كاملة */
-}
-
-/* العناوين */
-#Services .position-relative h5 {
-    font-size: 18px; /* تكبير الخط */
-    font-weight: 600;
-    margin: 4px 0; /* تقليل المسافة بين العنوان والصورة */
-    margin-bottom: 12px; /* تعديل المسافة بين العنوان والوصف */
-}
-
-/* الوصف */
-#Services .position-relative p {
-    font-size: 16px; /* تكبير الخط */
-    line-height: 1.6; /* تحسين القراءة */
-    text-overflow: ellipsis; /* عرض "..." لو النص طويل */
-    display: -webkit-box; /* التعامل مع النص كصندوق */
-    -webkit-line-clamp: 4; /* عدد الأسطر المسموح بها */
-    -webkit-box-orient: vertical; /* تحديد اتجاه النص عموديًا */
-    overflow: hidden; /* إخفاء النصوص الزائدة */
-    max-height: calc(1.6em * 4); /* ارتفاع النص بحسب عدد الأسطر */
-}
-
-
 
 /*** Spinner ***/
 #spinner {
@@ -381,26 +342,44 @@ h6{
     margin-bottom: 6rem;
     padding: 16rem 0 0 0;
     background:
-       
-        url(../img/bg-bottom.png), /* أضف الصورة الجديدة هنا */
+        url(../img/bg-bottom2.png), /* أضف الصورة الجديدة هنا */
         url(../img/Top.jpg); /* الصورة الخلفية الرئيسية */
     background-position:
-    
         center bottom, /* مكان bg-bottom */
         center center; /* مكان Ttop */
     background-size:
-       
-        100% 150px, /* خلي bg-bottom تاخد العرض الكامل وقلل ارتفاعها */
+        120% 300px, /* خلي bg-bottom تاخد العرض الكامل وقلل ارتفاعها */
         cover; /* غطي كامل القسم بالصورة Ttop */
     background-repeat: no-repeat;
 }
 
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
 
+.video-placeholder {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    background: #000; /* Black background for placeholder */
+    display: block;
+}
 
 @media (max-width: 991.98px) {
     .hero-header {
         padding: 6rem 0 9rem 0;
+        padding: 6rem 0 9rem 0;
+        background:
+            url(../img/Top.jpg); /* الصورة الخلفية الرئيسية */
+        background-position:
+            center center; /* مكان Ttop */
+        background-size:
+            cover; /* غطي كامل القسم بالصورة Ttop */
+        background-repeat: no-repeat;
     }
+    
 }
 /* ضبط المساحة الثابتة للكونتينر */
 #aboutSlider {
