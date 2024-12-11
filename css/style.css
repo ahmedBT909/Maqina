@@ -54,7 +54,7 @@
 
 .static-image-container {
     position: relative;
-    max-width: 150%;
+    max-width: 130%;
     display: flex;
     justify-content: center;
 }
@@ -78,6 +78,7 @@
         margin-left:20px;
         width: 600px;
     }
+  
 }
 
 /*** Spinner ***/
@@ -341,26 +342,44 @@ h6{
     margin-bottom: 6rem;
     padding: 16rem 0 0 0;
     background:
-       
-        url(../img/bg-bottom.png), /* أضف الصورة الجديدة هنا */
+        url(../img/bg-bottom2.png), /* أضف الصورة الجديدة هنا */
         url(../img/Top.jpg); /* الصورة الخلفية الرئيسية */
     background-position:
-    
         center bottom, /* مكان bg-bottom */
         center center; /* مكان Ttop */
     background-size:
-       
-        100% 150px, /* خلي bg-bottom تاخد العرض الكامل وقلل ارتفاعها */
+        120% 300px, /* خلي bg-bottom تاخد العرض الكامل وقلل ارتفاعها */
         cover; /* غطي كامل القسم بالصورة Ttop */
     background-repeat: no-repeat;
 }
 
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
 
+.video-placeholder {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    background: #000; /* Black background for placeholder */
+    display: block;
+}
 
 @media (max-width: 991.98px) {
     .hero-header {
         padding: 6rem 0 9rem 0;
+        padding: 6rem 0 9rem 0;
+        background:
+            url(../img/Top.jpg); /* الصورة الخلفية الرئيسية */
+        background-position:
+            center center; /* مكان Ttop */
+        background-size:
+            cover; /* غطي كامل القسم بالصورة Ttop */
+        background-repeat: no-repeat;
     }
+    
 }
 /* ضبط المساحة الثابتة للكونتينر */
 #aboutSlider {
