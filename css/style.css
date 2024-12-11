@@ -81,6 +81,46 @@
   
 }
 
+/* عزل التنسيق فقط لعناصر البوكسات داخل القسم */
+#Services .position-relative {
+    height: 250px; /* ارتفاع ثابت للبوكس */
+    display: flex; /* استخدام Flexbox لتنسيق المحتويات */
+    flex-direction: column; /* ترتيب العناصر عموديًا */
+    align-items: center; /* توسيط المحتوى أفقيًا */
+    text-align: center; /* توسيط النصوص */
+    padding: 10px; /* إضافة مسافة داخلية بسيطة */
+    gap: 12px; /* تقليل المسافة بين العناصر */
+}
+
+/* تحسين تنسيق الصورة */
+#Services .position-relative img, 
+#Services .position-relative .d-inline-flex {
+    width: 80px; /* حجم مناسب للصورة */
+    height: 80px; /* حجم مناسب للصورة */
+    object-fit: contain; /* ضمان ظهور الصورة كاملة */
+}
+
+/* العناوين */
+#Services .position-relative h5 {
+    font-size: 18px; /* تكبير الخط */
+    font-weight: 600;
+    margin: 4px 0; /* تقليل المسافة بين العنوان والصورة */
+    margin-bottom: 12px; /* تعديل المسافة بين العنوان والوصف */
+}
+
+/* الوصف */
+#Services .position-relative p {
+    font-size: 16px; /* تكبير الخط */
+    line-height: 1.6; /* تحسين القراءة */
+    text-overflow: ellipsis; /* عرض "..." لو النص طويل */
+    display: -webkit-box; /* التعامل مع النص كصندوق */
+    -webkit-line-clamp: 4; /* عدد الأسطر المسموح بها */
+    -webkit-box-orient: vertical; /* تحديد اتجاه النص عموديًا */
+    overflow: hidden; /* إخفاء النصوص الزائدة */
+    max-height: calc(1.6em * 4); /* ارتفاع النص بحسب عدد الأسطر */
+}
+
+
 /*** Spinner ***/
 #spinner {
     opacity: 0;
@@ -228,13 +268,17 @@ h6{
 /*** Navbar ***/
 .navbar-light .navbar-nav .nav-link {
     position: relative;
-    margin-right: 25px;
+    margin-right: 25px; /* زيادة المسافة بين الروابط */
     padding: 45px 0;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
     color: var(--light) !important;
     outline: none;
     transition: .5s;
+}
+
+.navbar-light .navbar-nav .nav-item:not(:last-child) {
+    margin-right: 50px; /* مسافة إضافية بين الروابط */
 }
 
 .navbar-light .navbar-nav .nav-link::before {
@@ -582,16 +626,10 @@ h6{
     margin-top: 2rem;
     padding-top: 2rem;
     background:
-        url(../img/bg-circle.png),
-        url(../img/bg-triangle.png), /* الصورة الثانية هنا */
-        url(../img/Top.jpg); /* الصورة الخلفية الأساسية */
+        url(../img/Footerbg.jpg); /* الصورة الخلفية الأساسية */
     background-position:
-        left 0px bottom 0px,    /* bg-circle على اليسار */
-        right 0px center,       /* bg-triangle على اليمين وفي المنتصف */
         center bottom;          /* Top.jpg في أسفل المنتصف */
     background-size:
-        auto,
-        auto,
         cover; /* الصورة الثانية تغطي القسم */
     background-repeat: no-repeat;
 }
@@ -659,4 +697,126 @@ h6{
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+/* تنسيق الحاوية */
+.newsletter-form {
+    display: flex;
+    justify-content: center; /* توسيط المحتويات */
+    gap: 10px; /* مسافة بين الإدخال والرابط */
+}
+
+/* تنسيق حقل الإدخال */
+.email-input {
+    width: 60%; /* عرض الإدخال */
+    padding: 12px 20px; /* مساحة داخلية لراحة الكتابة */
+    border: 1px solid #ccc; /* حدود الإدخال */
+    border-radius: 5px; /* زوايا مستديرة بسيطة */
+    font-size: 16px; /* حجم خط مريح */
+    outline: none; /* إزالة التحديد الأزرق */
+    transition: border-color 0.3s ease; /* تأثير عند التركيز */
+}
+
+.email-input:focus {
+    border-color: #23C683; /* تغيير لون الحدود عند التركيز */
+}
+
+/* تنسيق الزر */
+.submit-btn {
+    display: inline-block; /* لجعل الرابط يبدو كزر */
+    text-align: center; /* توسيط النص داخل الرابط */
+    width: 10%; /* نفس عرض الإدخال */
+    padding: 12px 20px; /* نفس أبعاد الإدخال */
+    border: none; /* إزالة الحدود */
+    border-radius: 5px; /* زوايا مستديرة */
+    font-size: 16px; /* حجم خط مريح */
+    font-weight: bold;
+    color: white; /* لون النص */
+    text-decoration: none; /* إزالة الخط السفلي */
+    background: linear-gradient(to right, #23C683, #226E6A); /* تدرج لوني */
+    cursor: pointer; /* مؤشر اليد عند التمرير */
+    transition: background 0.3s ease; /* تأثير عند التمرير */
+}
+
+.submit-btn:hover {
+    color: #000000; /* لون النص */
+    background: linear-gradient(to right, #23C683, #226E6A); /* عكس التدرج عند التمرير */
+}
+/* إضافة خط أسفل الحاوية */
+.newsletter-form {
+    position: relative; /* لربط الخط بالمحتوى */
+    padding-bottom: 50px; /* إضافة مساحة كافية تحت الحاوية */
+}
+
+.newsletter-form::after {
+    content: ""; /* خط إضافي */
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%; /* عرض الخط */
+    height: 6px; /* سمك الخط */
+    background: white; /* لون الخط */
+    opacity: 0.7; /* شفافية الخط */
+}
+/* تنسيق الحاوية الخاصة بالروابط */
+.social-links {
+    display: flex;
+    justify-content: center; /* توسيط الروابط */
+    gap: 15px; /* مسافة بين كل أيقونة */
+}
+
+/* تنسيق الأيقونات */
+.social-icon img {
+    width: 40px; /* عرض الأيقونة */
+    height: 40px; /* ارتفاع الأيقونة */
+    border-radius: 50%; /* شكل دائري للأيقونات */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثير عند التمرير */
+}
+
+.social-icon img:hover {
+    transform: scale(1.1); /* تكبير الأيقونة قليلاً عند التمرير */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* تأثير ظل */
+}
+/* تنسيق الحاوية */
+.info-list {
+    margin-top: 20px; /* مسافة بين القائمة وما فوقها */
+}
+
+/* تنسيق القائمة */
+.info-list ul {
+    display: flex; /* جعل العناصر في صف واحد */
+    justify-content: space-between; /* توزيع العناصر بمسافات متساوية */
+    align-items: center; /* توسيط العناصر عموديًا */
+    padding: 0; /* إزالة المسافات الافتراضية */
+    margin: 0; /* إزالة الهوامش الافتراضية */
+    list-style: none; /* إزالة النقاط من القائمة */
+}
+
+/* تنسيق العناصر */
+.info-list ul li {
+    font-size: 20px; /* تكبير الخط */
+    font-weight: bold; /* جعل الخط أوضح */
+    margin: 0 20px; /* مسافة بين العناصر */
+    display: flex; /* لجعل النقطة والنص على نفس السطر */
+    align-items: center; /* توسيط النقطة مع النص */
+}
+
+/* النقطة البيضاء */
+.info-list ul li .dot {
+    width: 10px; /* عرض النقطة */
+    height: 10px; /* ارتفاع النقطة */
+    background-color: white; /* لون النقطة */
+    border-radius: 50%; /* جعلها دائرية */
+    margin-right: 10px; /* مسافة بين النقطة والنص */
+    flex-shrink: 0; /* منع تغيير حجم النقطة */
+}
+
+/* تنسيق الروابط */
+.info-link {
+    text-decoration: none; /* إزالة الخط السفلي */
+    color: #ffffff; /* لون الرابط */
+    transition: color 0.3s ease; /* تأثير عند التمرير */
+}
+
+.info-link:hover {
+    color: #226E6A; /* لون مختلف عند التمرير */
 }
