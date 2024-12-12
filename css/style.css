@@ -68,19 +68,28 @@
     .hand-rob {
         content: url('../img/pc_HandRobot.png'); /* تغيير الصورة في حالة الشاشات الصغيرة */
     }
+    
+    /* التأكد من أن الحاوية لا تتجاوز العرض وتظهر بشكل مناسب */
     .static-image-container {
-        width: 600px;
-
+        width: 100%;
+        overflow: hidden; /* إخفاء الـ scroll الجانبي */
     }
 
     .static-image-container img {
         margin-top: 80px;
-        margin-left:20px;
-        width: 600px;
+        width: 100%;
+        margin-right: 0; /* إزالة المسافة على اليمين لتجنب الـ scroll */
+    }
+
+    /* إخفاء الـ scroll الجانبي على الأجهزة الصغيرة */
+    body {
+        overflow-x: hidden;
     }
   
 }
-
+body {
+    overflow-x: hidden;
+}
 /* عزل التنسيق فقط لعناصر البوكسات داخل القسم */
 #Services .position-relative {
     height: 250px; /* ارتفاع ثابت للبوكس */
@@ -424,27 +433,26 @@ h6{
         background-repeat: no-repeat;
     }
     
-}
-/* ضبط المساحة الثابتة للكونتينر */
+}/* ضبط المساحة الثابتة للكونتينر */
 #aboutSlider {
-    position: relative; /* الحفاظ على موضع السلايد شو */
-    width: 90%; /* العرض بالنسبة المئوية */
-    max-width: 1000px; /* الحد الأقصى للعرض */
-    height: 600px; /* الطول الثابت */
-    margin: 0 auto; /* محاذاة الكونتينر في المنتصف */
-    overflow: visible; /* السماح للنقاط بالظهور خارج حدود الكونتينر */
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+    overflow: visible;
 }
-
 
 /* تنسيق السلايد شو */
 .carousel-inner img {
-    width: 100%; /* تأكد من أن الصور تتناسب مع الحاوية */
-    height: auto; /* الحفاظ على الأبعاد الأصلية للصورة */
+    width: 100%;
+    height: auto;
 }
+
 /* تنسيق النقاط أسفل السلايد شو */
 .carousel-indicators {
     position: absolute;
-    bottom: -20px; /* ضع النقاط أسفل الكونتينر */
+    bottom: -20px;
     left: 35%;
     transform: translateX(-50%);
     display: flex;
@@ -455,27 +463,25 @@ h6{
 
 /* تخصيص النقاط */
 .carousel-indicators button {
-    width: 15px; /* زيادة حجم النقاط */
+    width: 15px;
     height: 15px;
-    background-color: #23C683; /* لون النقاط غير النشطة */
+    background-color: #23C683;
     border-radius: 30%;
     border: none;
-    margin: 0 8px; /* المسافة بين النقاط */
+    margin: 0 8px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* اللون الأخضر للنقطة النشطة */
 .carousel-indicators .active {
-    background-color: #28a745; /* اللون الأخضر */
-    transform: scale(1.2); /* تكبير النقطة النشطة */
+    background-color: #28a745;
+    transform: scale(1.2);
 }
 
 /* تغيير اللون للنقاط غير النشطة */
 .carousel-indicators button:not(.active) {
-    background-color: #000000; /* تغيير اللون */
+    background-color: #000000;
 }
-
-
 
 /*** Feature ***/
 .feature-item {
@@ -625,17 +631,12 @@ h6{
 .footer {
     margin-top: 2rem;
     padding-top: 2rem;
-    background:
-        url(../img/Footerbg.jpg); /* الصورة الخلفية الأساسية */
-    background-position:
-        center bottom;          /* Top.jpg في أسفل المنتصف */
-    background-size:
-        cover; /* الصورة الثانية تغطي القسم */
+    background: url(../img/Footerbg.jpg); /* الصورة الخلفية الأساسية */
+    background-position: center bottom; /* Top.jpg في أسفل المنتصف */
+    background-size: cover; /* الصورة تغطي القسم */
     background-repeat: no-repeat;
+    color: white; /* لون النص الافتراضي */
 }
-
-
-
 
 .footer .btn.btn-social {
     margin-right: 5px;
@@ -698,53 +699,15 @@ h6{
     padding-right: 0;
     border-right: none;
 }
-/* تنسيق الحاوية */
+
+/* تحسين حقل الإدخال */
 .newsletter-form {
     display: flex;
-    justify-content: center; /* توسيط المحتويات */
-    gap: 10px; /* مسافة بين الإدخال والرابط */
-}
-
-/* تنسيق حقل الإدخال */
-.email-input {
-    width: 60%; /* عرض الإدخال */
-    padding: 12px 20px; /* مساحة داخلية لراحة الكتابة */
-    border: 1px solid #ccc; /* حدود الإدخال */
-    border-radius: 5px; /* زوايا مستديرة بسيطة */
-    font-size: 16px; /* حجم خط مريح */
-    outline: none; /* إزالة التحديد الأزرق */
-    transition: border-color 0.3s ease; /* تأثير عند التركيز */
-}
-
-.email-input:focus {
-    border-color: #23C683; /* تغيير لون الحدود عند التركيز */
-}
-
-/* تنسيق الزر */
-.submit-btn {
-    display: inline-block; /* لجعل الرابط يبدو كزر */
-    text-align: center; /* توسيط النص داخل الرابط */
-    width: 10%; /* نفس عرض الإدخال */
-    padding: 12px 20px; /* نفس أبعاد الإدخال */
-    border: none; /* إزالة الحدود */
-    border-radius: 5px; /* زوايا مستديرة */
-    font-size: 16px; /* حجم خط مريح */
-    font-weight: bold;
-    color: white; /* لون النص */
-    text-decoration: none; /* إزالة الخط السفلي */
-    background: linear-gradient(to right, #23C683, #226E6A); /* تدرج لوني */
-    cursor: pointer; /* مؤشر اليد عند التمرير */
-    transition: background 0.3s ease; /* تأثير عند التمرير */
-}
-
-.submit-btn:hover {
-    color: #000000; /* لون النص */
-    background: linear-gradient(to right, #23C683, #226E6A); /* عكس التدرج عند التمرير */
-}
-/* إضافة خط أسفل الحاوية */
-.newsletter-form {
-    position: relative; /* لربط الخط بالمحتوى */
-    padding-bottom: 50px; /* إضافة مساحة كافية تحت الحاوية */
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap; /* يجعل العناصر تتحرك إلى الأسفل إذا كانت الشاشة صغيرة */
+    position: relative;
+    padding-bottom: 50px;
 }
 
 .newsletter-form::after {
@@ -752,71 +715,251 @@ h6{
     position: absolute;
     bottom: 0;
     left: 10%;
-    width: 80%; /* عرض الخط */
-    height: 6px; /* سمك الخط */
-    background: white; /* لون الخط */
-    opacity: 0.7; /* شفافية الخط */
-}
-/* تنسيق الحاوية الخاصة بالروابط */
-.social-links {
-    display: flex;
-    justify-content: center; /* توسيط الروابط */
-    gap: 15px; /* مسافة بين كل أيقونة */
+    width: 80%;
+    height: 6px;
+    background: white;
+    opacity: 0.7;
 }
 
-/* تنسيق الأيقونات */
+/* تحسين الإدخال */
+.email-input {
+    width: 60%;
+    max-width: 400px;
+    min-width: 200px; /* عرض الإدخال الأدنى */
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.email-input:focus {
+    border-color: #23C683;
+}
+
+/* تحسين الزر */
+.submit-btn {
+    display: inline-block;
+    text-align: center;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    background: linear-gradient(to right, #23C683, #226E6A);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(to right, #226E6A, #23C683);
+    color: #000000;
+}
+
+/* تحسين الحاوية الخاصة بالروابط */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
 .social-icon img {
-    width: 40px; /* عرض الأيقونة */
-    height: 40px; /* ارتفاع الأيقونة */
-    border-radius: 50%; /* شكل دائري للأيقونات */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثير عند التمرير */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .social-icon img:hover {
-    transform: scale(1.1); /* تكبير الأيقونة قليلاً عند التمرير */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* تأثير ظل */
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-/* تنسيق الحاوية */
+
+/* تحسين قائمة الروابط */
 .info-list {
-    margin-top: 20px; /* مسافة بين القائمة وما فوقها */
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap; /* جعل القائمة تستجيب لحجم الشاشة */
+    justify-content: center;
+    gap: 20px;
 }
 
-/* تنسيق القائمة */
 .info-list ul {
-    display: flex; /* جعل العناصر في صف واحد */
-    justify-content: space-between; /* توزيع العناصر بمسافات متساوية */
-    align-items: center; /* توسيط العناصر عموديًا */
-    padding: 0; /* إزالة المسافات الافتراضية */
-    margin: 0; /* إزالة الهوامش الافتراضية */
-    list-style: none; /* إزالة النقاط من القائمة */
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    justify-content: center; /* توسيط القائمة */
 }
 
-/* تنسيق العناصر */
 .info-list ul li {
-    font-size: 20px; /* تكبير الخط */
-    font-weight: bold; /* جعل الخط أوضح */
-    margin: 0 20px; /* مسافة بين العناصر */
-    display: flex; /* لجعل النقطة والنص على نفس السطر */
-    align-items: center; /* توسيط النقطة مع النص */
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-left: 130px; /* إضافة مسافة جانبية على اليسار */
+    margin-right: 130px; /* إضافة مسافة جانبية على اليمين */
 }
 
-/* النقطة البيضاء */
 .info-list ul li .dot {
-    width: 10px; /* عرض النقطة */
-    height: 10px; /* ارتفاع النقطة */
-    background-color: white; /* لون النقطة */
-    border-radius: 50%; /* جعلها دائرية */
-    margin-right: 10px; /* مسافة بين النقطة والنص */
-    flex-shrink: 0; /* منع تغيير حجم النقطة */
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
-/* تنسيق الروابط */
 .info-link {
-    text-decoration: none; /* إزالة الخط السفلي */
-    color: #ffffff; /* لون الرابط */
-    transition: color 0.3s ease; /* تأثير عند التمرير */
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease;
 }
 
 .info-link:hover {
-    color: #226E6A; /* لون مختلف عند التمرير */
+    color: #226E6A;
+}
+
+/* تحسين التصميم عند الأحجام الصغيرة */
+@media (max-width: 768px) {
+    .newsletter-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .email-input {
+        width: 90%;
+    }
+
+    .submit-btn {
+        width: auto;
+    }
+
+    .info-list ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-links {
+        gap: 10px;
+    }
+
+    .social-icon img {
+        width: 30px;
+        height: 30px;
+    }
+    .about {
+        margin-left: 0;
+        text-align: center; /* تعديل المحاذاة إلى المركز */
+    }
+
+    .about h5, .about h1 {
+        margin-left: 0; /* إزالة المسافة المبدئية */
+        text-align: center; /* محاذاة النص في الوسط */
+    }
+
+    /* تعديل حجم النصوص على الشاشات الصغيرة */
+    .about h5 {
+        font-size: 18px; /* تصغير حجم النص */
+    }
+
+    .about h1 {
+        font-size: 24px; /* تصغير حجم النص */
+        margin-bottom: 20px; /* تقليل المسافة السفلية */
+    }
+
+    /* جعل الفيديو يستجيب ليملأ العرض بالكامل */
+    .video-container {
+        width: 100%;
+        margin: 0 auto; /* توسيط الفيديو */
+    }
+
+    .video-placeholder {
+        width: 100%;
+        height: auto; /* يجعل الفيديو يتناسب مع حجم الشاشة */
+    }
+    .carousel-item {
+        text-align: center; /* محاذاة النصوص إلى الوسط */
+    }
+
+    .carousel-item h1 {
+        font-size: 24px; /* تقليل حجم الخط */
+    }
+
+    .carousel-item h5, .carousel-item h3 {
+        font-size: 18px; /* تقليل حجم الخط */
+    }
+
+    /* تعديل المسافات بين النصوص والصور */
+    .carousel-item .row {
+        flex-direction: column; /* جعل الصور والنصوص في عمود */
+        align-items: center;
+    }
+
+    .carousel-item img {
+        width: 100%; /* جعل الصور تستجيب للشاشة */
+        max-width: 300px; /* تحديد أقصى عرض للصورة */
+    }
+
+    .row.g-4.mb-4 {
+        justify-content: center; /* محاذاة العناصر إلى الوسط */
+    }
+
+    /* تقليل حجم النصوص في الأزرار */
+    .btn-primary-gradient, .btn-primary-gradient2 {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    #aboutSlider {
+        height: auto; /* تغيير الارتفاع ليكون تلقائي ليتناسب مع الصورة */
+    }
+
+    .carousel-inner {
+        text-align: center; /* محاذاة النصوص في السلايد بشكل مركزي */
+    }
+
+    .carousel-item {
+        text-align: center;
+    }
+
+    .carousel-item .col-md-6 {
+        display: inline-block; /* تغيير التخطيط ليظهر المحتوى بشكل مناسب */
+        width: 100%; /* جعل الأعمدة تأخذ العرض الكامل */
+    }
+
+    .carousel-indicators {
+        position: absolute;
+        bottom: -40px; /* جعل النقاط أسفل الصورة بمقدار 40px */
+        left: 50%; /* مركز النقاط على الشاشة */
+        transform: translateX(-50%); /* جعل الأزرار في المنتصف */
+        z-index: 10;
+        display: flex;
+        justify-content: center; /* محاذاة النقاط */
+        gap: 15px; /* مسافة بين النقاط */
+    }
+
+    .carousel-indicators button {
+        width: 12px; /* تصغير حجم النقاط */
+        height: 12px;
+        background-color: #23C683; /* اللون للنقطة غير النشطة */
+        border-radius: 50%;
+        border: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    /* اللون الأخضر للنقطة النشطة */
+    .carousel-indicators .active {
+        background-color: #28a745;
+        transform: scale(1.2);
+    }
+
+    /* تغيير اللون للنقاط غير النشطة */
+    .carousel-indicators button:not(.active) {
+        background-color: #000000;
+    }
+    
 }
