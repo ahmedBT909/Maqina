@@ -84,23 +84,10 @@
     }
     .hand-rob {
         padding: 0px;
-        content: url('../img/pc_HandRobot.png'); /* تغيير الصورة في حالة الشاشات الصغيرة */
-        overflow: hidden; /* إخفاء الـ scroll الجانبي */
+        content: url('../img/Untitled-1-removebg\ \(2\).png'); /* تغيير الصورة في حالة الشاشات الصغيرة */
+        padding-top:3rem;
+        padding-right:2.5rem;
     }
-    
-    /* التأكد من أن الحاوية لا تتجاوز العرض وتظهر بشكل مناسب */
-    .static-image-container {
-        width: 100%;
-        overflow: hidden; /* إخفاء الـ scroll الجانبي */
-    }
-
-    .static-image-container img {
-        margin-top: 80px;
-        width: 100%;
-        margin-right: 0; /* إزالة المسافة على اليمين لتجنب الـ scroll */
-        overflow: hidden; /* إخفاء الـ scroll الجانبي */
-    }
-
     body {
         overflow-x: hidden;
     }
@@ -444,6 +431,7 @@ h6{
     .hero-header {
         overflow: hidden; /* إخفاء الـ scroll الجانبي */
         padding: 0px;
+        padding-top: 5rem;
         background:
             url(../img/Top.jpg); /* الصورة الخلفية الرئيسية */
         background-position:
