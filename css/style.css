@@ -64,9 +64,26 @@
     height: auto;
     object-fit: contain;
 }
-
+.a1{
+    margin-left: 20px;
+     text-align: left;
+}
+.a2{
+    margin-left: 200px; 
+    text-align: left;
+}
 @media (max-width: 768px) {
+    
+    .a1{
+        margin-left: 20px;
+         text-align: left;
+    }
+    .a2{
+        margin-left: 20px; 
+        text-align: left;
+    }
     .hand-rob {
+        padding: 0px;
         content: url('../img/pc_HandRobot.png'); /* تغيير الصورة في حالة الشاشات الصغيرة */
         overflow: hidden; /* إخفاء الـ scroll الجانبي */
     }
@@ -406,6 +423,7 @@ h6{
         120% 300px, /* خلي bg-bottom تاخد العرض الكامل وقلل ارتفاعها */
         cover; /* غطي كامل القسم بالصورة Ttop */
     background-repeat: no-repeat;
+    
 }
 
 .video-container {
@@ -424,6 +442,8 @@ h6{
 
 @media (max-width: 991.98px) {
     .hero-header {
+        overflow: hidden; /* إخفاء الـ scroll الجانبي */
+        padding: 0px;
         background:
             url(../img/Top.jpg); /* الصورة الخلفية الرئيسية */
         background-position:
