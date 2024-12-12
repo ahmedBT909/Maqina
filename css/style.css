@@ -914,10 +914,10 @@ h6{
         padding: 10px 20px;
         font-size: 14px;
     }
+   
     #aboutSlider {
-        height: auto; /* تغيير الارتفاع ليكون تلقائي ليتناسب مع الصورة */
+        height: 800px; /* تغيير الارتفاع ليكون تلقائي ليتناسب مع الصورة */
     }
-
     .carousel-inner {
         text-align: center; /* محاذاة النصوص في السلايد بشكل مركزي */
     }
@@ -931,35 +931,39 @@ h6{
         width: 100%; /* جعل الأعمدة تأخذ العرض الكامل */
     }
 
-    .carousel-indicators {
-        position: absolute;
-        bottom: -40px; /* جعل النقاط أسفل الصورة بمقدار 40px */
-        left: 50%; /* مركز النقاط على الشاشة */
-        transform: translateX(-50%); /* جعل الأزرار في المنتصف */
-        z-index: 10;
-        display: flex;
-        justify-content: center; /* محاذاة النقاط */
-        gap: 15px; /* مسافة بين النقاط */
-    }
+   
+/* تنسيق النقاط أسفل السلايد شو */
+.carousel-indicators {
+    position: absolute;
+    bottom: -40px;
+    left: 35%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
 
-    .carousel-indicators button {
-        width: 12px; /* تصغير حجم النقاط */
-        height: 12px;
-        background-color: #23C683; /* اللون للنقطة غير النشطة */
-        border-radius: 50%;
-        border: none;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-    }
+/* تخصيص النقاط */
+.carousel-indicators button {
+    width: 15px;
+    height: 15px;
+    background-color: #23C683;
+    border-radius: 30%;
+    border: none;
+    margin: 0 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-    /* اللون الأخضر للنقطة النشطة */
-    .carousel-indicators .active {
-        background-color: #28a745;
-        transform: scale(1.2);
-    }
+/* اللون الأخضر للنقطة النشطة */
+.carousel-indicators .active {
+    background-color: #28a745;
+    transform: scale(1.2);
+}
 
-    /* تغيير اللون للنقاط غير النشطة */
-    .carousel-indicators button:not(.active) {
-        background-color: #000000;
-    }
+/* تغيير اللون للنقاط غير النشطة */
+.carousel-indicators button:not(.active) {
+    background-color: #000000;
+}
     
 }
